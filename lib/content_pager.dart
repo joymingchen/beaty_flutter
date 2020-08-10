@@ -1,4 +1,7 @@
+import 'package:beaty_flutter/custom_appbar.dart';
+import 'package:beaty_flutter/recommend_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ContentPager extends StatefulWidget {
   final ValueChanged<int> pageChanged;
@@ -29,6 +32,7 @@ class _ContentPagerState extends State<ContentPager> {
     if (widget.contentPageController != null) {
       widget.contentPageController._pageController = _pageController;
     }
+    setSystemStatusBar();
     super.initState();
   }
 
@@ -36,15 +40,16 @@ class _ContentPagerState extends State<ContentPager> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        CustomAppBar(),
         Expanded(
           child: PageView(
             controller: _pageController,
             onPageChanged: widget.pageChanged,
             children: [
-              _content(0),
-              _content(1),
-              _content(2),
-              _content(3),
+              _content(RecommendCard()),
+              _content(RecommendCard()),
+              _content(RecommendCard()),
+              _content(RecommendCard()),
             ],
           ),
         ),
@@ -52,14 +57,25 @@ class _ContentPagerState extends State<ContentPager> {
     );
   }
 
-  _content(int index) {
+  _content(Widget widget) {
     return Padding(
       padding: EdgeInsets.all(10),
-      child: Container(
-        decoration: BoxDecoration(color: _colors[index]),
-      ),
+      child: widget,
     );
   }
+}
+
+void setSystemStatusBar() {
+  SystemUiOverlayStyle style = SystemUiOverlayStyle(
+    systemNavigationBarColor: Color(0xFF000000),
+    systemNavigationBarDividerColor: null,
+    statusBarColor: Colors.transparent,
+    systemNavigationBarIconBrightness: Brightness.light,
+    statusBarIconBrightness: Brightness.dark,
+    statusBarBrightness: Brightness.light,
+  );
+
+  SystemChrome.setSystemUIOverlayStyle(style);
 }
 
 //内容区域的控制器

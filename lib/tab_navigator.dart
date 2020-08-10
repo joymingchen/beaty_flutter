@@ -45,9 +45,9 @@ class _TabNavigatorState extends State<TabNavigator> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         items: [
-          _bottomItem("人生", Icons.account_balance, 0),
-          _bottomItem("如戏", Icons.backup, 1),
-          _bottomItem("全靠", Icons.calendar_today, 2),
+          _bottomItem("人生", Icons.folder, 0),
+          _bottomItem("如戏", Icons.explore, 1),
+          _bottomItem("全靠", Icons.donut_small, 2),
           _bottomItem("演技", Icons.dashboard, 3),
         ],
       ),

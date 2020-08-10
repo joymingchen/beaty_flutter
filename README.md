@@ -1,6 +1,6 @@
 # beaty_flutter
 
-A new Flutter project.
+A Flutter demo project.
 
 ## Getting Started
 
