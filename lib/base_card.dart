@@ -7,6 +7,7 @@ class BaseCard extends StatefulWidget {
 
 class BaseCardState extends State<BaseCard> {
   Color subTitleColor = Colors.grey;
+  Color bottomTitleColor = Colors.grey;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,10 @@ class BaseCardState extends State<BaseCard> {
       child: Container(
         decoration: BoxDecoration(color: Colors.white),
         child: Column(
-          children: [topContent(), bottomContent()],
+          children: [
+            topContent(),
+            bottomContent(),
+          ],
         ),
       ),
     );
@@ -30,8 +34,13 @@ class BaseCardState extends State<BaseCard> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               topTitle(""),
+              Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: topTitle2(""),
+              ),
             ],
           ),
           subTitle("")
@@ -48,7 +57,22 @@ class BaseCardState extends State<BaseCard> {
     return Container(
       child: Text(
         title,
-        style: TextStyle(color: subTitleColor, fontSize: 11),
+        style: TextStyle(
+          color: subTitleColor,
+          fontSize: 11,
+        ),
+      ),
+    );
+  }
+
+  Widget bottomTitle(String title) {
+    return Container(
+      child: Text(
+        title,
+        style: TextStyle(
+          color: bottomTitleColor,
+          fontSize: 10,
+        ),
       ),
     );
   }
@@ -56,7 +80,20 @@ class BaseCardState extends State<BaseCard> {
   topTitle(String title) {
     return Text(
       title,
-      style: TextStyle(fontSize: 22, color: Colors.black),
+      style: TextStyle(
+        fontSize: 22,
+        color: Colors.black,
+      ),
+    );
+  }
+
+  topTitle2(String title) {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: 10,
+        color: Colors.grey,
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:beaty_flutter/custom_appbar.dart';
 import 'package:beaty_flutter/recommend_card.dart';
+import 'package:beaty_flutter/share_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,12 +17,6 @@ class ContentPager extends StatefulWidget {
 }
 
 class _ContentPagerState extends State<ContentPager> {
-  static List<Color> _colors = [
-    Colors.blue,
-    Colors.amber,
-    Colors.red,
-    Colors.greenAccent
-  ];
 
   PageController _pageController = PageController(
     viewportFraction: 0.8,
@@ -47,7 +42,7 @@ class _ContentPagerState extends State<ContentPager> {
             onPageChanged: widget.pageChanged,
             children: [
               _content(RecommendCard()),
-              _content(RecommendCard()),
+              _content(ShareCard()),
               _content(RecommendCard()),
               _content(RecommendCard()),
             ],

@@ -29,12 +29,14 @@ class _RecommendCardState extends BaseCardState {
   @override
   bottomContent() {
     return Expanded(
-        child: Container(
-      margin: EdgeInsets.only(top: 10),
-      child: Image.network(
-        "http://www.devio.org/io/flutter_beauty/card_1.jpg",
-        fit: BoxFit.cover,
+      child: Container(
+        constraints: BoxConstraints.expand(),
+        margin: EdgeInsets.only(top: 10),
+        child: Image.network(
+          "http://www.devio.org/io/flutter_beauty/card_1.jpg",
+          fit: BoxFit.cover,
+        ),
       ),
-    ));
+    );
   }
 }

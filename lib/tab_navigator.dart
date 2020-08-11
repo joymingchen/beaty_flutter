@@ -18,14 +18,15 @@ class _TabNavigatorState extends State<TabNavigator> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          colors: [
-            Color(0xffedeef0),
-            Color(0xffe6e7e9),
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        )),
+          gradient: LinearGradient(
+            colors: [
+              Color(0xffedeef0),
+              Color(0xffe6e7e9),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
         child: ContentPager(
           contentPageController: contentPageController,
           pageChanged: (index) {
@@ -57,18 +58,19 @@ class _TabNavigatorState extends State<TabNavigator> {
   //封装底部item
   _bottomItem(String title, IconData icon, int index) {
     return BottomNavigationBarItem(
-        title: Text(
-          title,
-          style: TextStyle(
-              color: index == _currentIndex ? _activeColor : _defaultColor),
-        ),
-        icon: Icon(
-          icon,
-          color: _defaultColor,
-        ),
-        activeIcon: Icon(
-          icon,
-          color: _activeColor,
-        ));
+      title: Text(
+        title,
+        style: TextStyle(
+            color: index == _currentIndex ? _activeColor : _defaultColor),
+      ),
+      icon: Icon(
+        icon,
+        color: _defaultColor,
+      ),
+      activeIcon: Icon(
+        icon,
+        color: _activeColor,
+      ),
+    );
   }
 }
