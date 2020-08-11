@@ -1,4 +1,5 @@
 import 'package:beaty_flutter/custom_appbar.dart';
+import 'package:beaty_flutter/free_card.dart';
 import 'package:beaty_flutter/recommend_card.dart';
 import 'package:beaty_flutter/share_card.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,6 @@ class ContentPager extends StatefulWidget {
 }
 
 class _ContentPagerState extends State<ContentPager> {
-
   PageController _pageController = PageController(
     viewportFraction: 0.8,
   );
@@ -43,7 +43,7 @@ class _ContentPagerState extends State<ContentPager> {
             children: [
               _content(RecommendCard()),
               _content(ShareCard()),
-              _content(RecommendCard()),
+              _content(FreeCard()),
               _content(RecommendCard()),
             ],
           ),
