@@ -2,6 +2,7 @@ import 'package:beaty_flutter/custom_appbar.dart';
 import 'package:beaty_flutter/free_card.dart';
 import 'package:beaty_flutter/recommend_card.dart';
 import 'package:beaty_flutter/share_card.dart';
+import 'package:beaty_flutter/special_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -44,7 +45,7 @@ class _ContentPagerState extends State<ContentPager> {
               _content(RecommendCard()),
               _content(ShareCard()),
               _content(FreeCard()),
-              _content(RecommendCard()),
+              _content(SpecialCard()),
             ],
           ),
         ),

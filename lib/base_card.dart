@@ -69,6 +69,7 @@ class BaseCardState extends State<BaseCard> {
     return Container(
       child: Text(
         title,
+        textAlign: TextAlign.center,
         style: TextStyle(
           color: bottomTitleColor,
           fontSize: 10,
